@@ -5,5 +5,6 @@
 	void swap_int(int *, int *);
 	void _puts(char *);
 	void print_rev(char *);
+	int _strlen(char *);
 
 #endif
