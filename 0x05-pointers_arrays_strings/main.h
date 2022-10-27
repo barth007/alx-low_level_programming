@@ -9,5 +9,6 @@
 	void rev_string(char *);
 	void puts2(char *);
 	void print_array(int *, int );
+	void puts_half(char *);
 
 #endif
