@@ -10,5 +10,6 @@
 	void puts2(char *);
 	void print_array(int *, int );
 	void puts_half(char *);
+	char *_strcpy(char *, char *);
 
 #endif
