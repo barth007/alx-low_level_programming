@@ -1,6 +1,6 @@
 #ifndef HEADER_H
 #define HEADER_H
-	int _putchar(char );
+	int _putchar(char);
 	char *_strcat(char *, char *);
 	char *_strncat(char *, char *, int);
 	char *_strncpy(char *, char *, int);
@@ -9,4 +9,6 @@
 	char *string_toupper(char *);
 	char *cap_string(char *);
 	char *leet(char *);
+	char *rot13(char *);
+	void print_number(int);
 #endif
