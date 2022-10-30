@@ -1,8 +1,12 @@
-char _putchar(char);
+#include "main.h"
+/**
+ * print_alphabet - function print alphabet
+ * @void: takes no parameter
+ * Return: void
+ */
 void print_alphabet(void)
 {
-	char ch='a';
-
+	char ch = 'a';
 
 	while (ch <= 'z')
 	{
