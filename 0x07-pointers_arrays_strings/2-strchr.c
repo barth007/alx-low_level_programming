@@ -7,9 +7,11 @@
  */
 char *_strchr(char *s, char c)
 {
-	int i;
+	int i, j, len;
 
-	for (i = 0; *s != '\0'; i++)
+	for (j = 0; s[j] != '\0'; j++)
+		len++;
+	for (i = 0; i <= (len + 1); i++)
 	{
 		/* dereference the s so the value can be access*/
 		if (*s == c)
