@@ -27,10 +27,11 @@ int main(int argc, char *argv[])
 			else
 			{
 				printf("Error\n");
-				exit(EXIT_FAILURE);
+				return (1);
 			}
 		}
 		printf("%d\n", result);
+		return (0);
 	}
 	exit(EXIT_SUCCESS);
 }
