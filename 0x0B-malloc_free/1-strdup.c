@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _strdup -  function returns a pointer to a new string which is a
+ * _strdup -  function returns a pointer to a new string which is ia
  * duplicate of the string str.
  * Memory for the new string is obtained with malloc,
  * and can be freed with free.
@@ -18,7 +18,7 @@ char *_strdup(char *str)
 	len = 0;
 	for (i = 0; str[i] != '\0'; i++)
 		len++;
-	cpy = malloc(len * sizeof(*cpy));
+	cpy = malloc(len * sizeof(char));
 	if (cpy)
 	{
 		for (j = 0; j <= len; j++)
