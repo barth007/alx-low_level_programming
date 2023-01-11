@@ -42,7 +42,7 @@ char *str_concat(char *s1, char *s2)
 	int len1, len2, i, j, newLen;
 
 	if ((s1 == NULL) & (s2 == NULL))
-		return (NULL);
+		s1 = s2 = " ";
 	if ((s1 != NULL) & (s2 == NULL))
 		s2 = " ";
 	if ((s2 != NULL) & (s1 == NULL))
