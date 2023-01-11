@@ -10,4 +10,6 @@
 	void free_grid(int **, int);
 	char *argstostr(int, char **);
 	char **strtow(char *);
+	char *_strcat(char *, char *);
+	char *_strncpy(char *, char *);
 #endif
