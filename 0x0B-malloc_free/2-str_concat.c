@@ -41,7 +41,7 @@ char *str_concat(char *s1, char *s2)
 	char *newStrn;
 	int len1, len2, i, j, newLen;
 
-	if (s1 == NULL || s2 == NULL)
+	if ((s1 == NULL) & (s2 == NULL))
 		return (NULL);
 	len1 = 0;
 	for (i = 0; s1[i] != '\0'; i++)
