@@ -15,15 +15,15 @@ char *_strcat(char *dest, char *src, unsigned int n)                            
 	 len2 = 0;
         for (k = 0; src[k] != '\0'; k++)
                 len2++;
-	if ( n <= len2)
+	if ( n >= len2)
 	{
-		for (j = 0; j <= n; j++)
+		for (j = 0; src[j] != '\0'; j++)
 			dest[len1 + j] = src[j];
 		return (dest);
 	}
 	else
 	{
-        	for (j = 0; src[j] != '\0'; j++)
+        	for (j = 0; j <= n; j++)
                 	dest[len1 + j] = src[j];
         	return (dest);
 	}
