@@ -23,7 +23,7 @@ char *_strncpy(char *dest, char *src)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *newStrn;
-	unsigned int len1, len2, i, j, newLen;
+	unsigned int len1, len2, i, j;
 
 	if ((s1 == NULL) & (s2 == NULL))
 		s1 = s2 = "";
@@ -37,21 +37,16 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	len2 = 0;
 	for (j = 0; s2[j] != '\0'; j++)
 		len2++;
+	if (n >= len2)
+	{
+		n = len2;
+	}
 	newStrn = malloc(sizeof(char) * (len1 + n + 1));
 	if (newStrn)
 	{
 		_strncpy(newStrn, s1);
 		_strcat(newStrn, s2, n);
-		if (n <= len2)
-		{
-			newLen = len1 + n;
-			newStrn[newLen] = '\0';
-		}
-		else
-		{
-			newLen = len1 + len2;
-			newStrn[newLen - 1] = '\0';
-		}
+		newStrn[len1 + n] = '\0';
 		return (newStrn);
 	}
 	else
