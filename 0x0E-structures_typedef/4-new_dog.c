@@ -14,7 +14,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	int i, len1, len2;
 	char *name_copy, *owner_copy;
 
-	if (name == NULL || isnan(age) || owner == NULL)
+	if (name == NULL || age < 0 || owner == NULL)
 		return (NULL);
 	len1 = 0;
 	for (i = 0; name[i] != '\0'; i++)
@@ -48,4 +48,4 @@ dog_t *new_dog(char *name, float age, char *owner)
 	owner_copy[i] = '\0';
 	info->owner = owner_copy;
 	return (info);
-
+}
