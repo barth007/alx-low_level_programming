@@ -11,27 +11,30 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *info;
+	char *name_copy, *owner_copy;
 
 	if (name == NULL || isnan(age) || owner == NULL)
 		return (NULL);
 	info = malloc(sizeof(dog_t));
-	if (!info)
+	if (info == NULL)
 		return (NULL);
 
-	info->name = malloc(sizeof(strlen(name) + 1));
-	if (info->name == NULL)
+	name_copy = malloc(sizeof(strlen(name) + 1));
+	if (name_copy == NULL)
 	{
 		return (NULL);
 		free(info);
 	}
-	strcpy(info->name, name);
+	strcpy(name_copy, name);
+	info->name = name_copy;
 	info->age = age;
-	info->owner = malloc(sizeof(strlen(owner) + 1));
-	if (info->owner == NULL)
+	owner_copy = malloc(sizeof(strlen(owner) + 1));
+	if (owner_copy == NULL)
 	{
 		return (NULL);
 		free(info);
 	}
-	strcpy(info->owner, owner);
+	strcpy(owner_copy, owner);
+	info->owner = owner_copy;
 	return (info);
 }
