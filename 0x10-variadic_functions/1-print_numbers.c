@@ -10,14 +10,16 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list valist;
 	unsigned int i;
+	int num;
 
-	if (!separator)
-		return;
 	va_start(valist, n);
 	for (i = 0; i < n; i++)
 	{
-		if (separator)
-			printf("%d", va_arg(valist, int));
+		num = va_arg(valist, int);
+		if (!separator)
+			break;
+		else
+			printf("%d", num);
 		if (i < n - 1)
 			printf("%s ", separator);
 	}
