@@ -13,9 +13,9 @@ void print_all(const char * const format, ...)
 	va_start(valist, format);
 	l = 0;
 	len = 0;
-	while (format[len])
+	while (format && format[len])
 		len++;
-	while (format[l])
+	while (format && format[l])
 	{
 		if (l == len - 1)
 			sep = "";
