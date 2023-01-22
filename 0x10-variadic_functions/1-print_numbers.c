@@ -9,12 +9,13 @@
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list valist;
-	unsigned int i, _num;
+	unsigned int i;
+	int _num;
 
 	va_start(valist, n);
 	for (i = 0; i < n; i++)
 	{
-		_num = va_arg(valist, const unsigned int);
+		_num = va_arg(valist, int);
 		printf("%d", _num);
 		if (separator == NULL)
 			return;
