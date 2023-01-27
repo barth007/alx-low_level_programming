@@ -13,6 +13,8 @@ list_t *add_node(list_t **head, const char *str)
 	/*allocate node*/
 	new_node = malloc(sizeof(list_t *));
 	/* put in the data */
+	if (!new_node)
+		return (NULL);
 	new_node->str = strdup(str);
 
 	/*find length of the string*/
