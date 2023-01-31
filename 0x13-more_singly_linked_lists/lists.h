@@ -7,6 +7,7 @@
 /**
  *struct node - a user defined data containing a data and next node
  *@data: this is a string pointing to a char
+ *@n: long integer
  *@next: this is the next node to point to
 **/
 typedef struct node
