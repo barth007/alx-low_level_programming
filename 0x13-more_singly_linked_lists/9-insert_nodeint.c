@@ -19,14 +19,19 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	ptr2->n = n;
 	ptr2->next = NULL;
 	ptr = *head;
+	if (idx == 0)
+	{
+		ptr2->next = *head;
+		*head = ptr2;
+	}
 	tracker = 0;
-	while (idx != 1 && ptr->next != NULL)
+	while (tracker != idx - 1 && ptr->next != NULL)
 	{
 		ptr = ptr->next;
-		idx--;
 		tracker++;
 	}
-	if (tracker <= idx - 2)
+	printf("tracker=%d ,idx=%d\n", tracker, idx);
+	if (tracker == idx - 1)
 	{
 		ptr2->next = ptr->next;
 		ptr->next = ptr2;
