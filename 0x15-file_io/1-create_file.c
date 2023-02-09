@@ -7,33 +7,23 @@
 **/
 int create_file(const char *filename, char *text_content)
 {
-	int content, result;
-	FILE *file_descriptor;
+	int file_descriptor, i;
 
 	if (filename == NULL)
 		return (-1);
-	result = access(filename, R_OK | W_OK);
-	if (result == 0)
-	{
-		file_descriptor = fopen(filename, "w");
-	}
-	else
-	{
-		file_descriptor = fopen(filename, "w");
-		chmod(filename, 0600);
-	}
-	if (file_descriptor == NULL)
+
+	file_descriptor = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0600);
+	if (file_descriptor == -1)
 		return (-1);
+	i = 0;
+	while (text_content[i])
+		i++;
 	if (text_content == NULL)
 	{
-		content = fputs(" ", file_descriptor);
-		fclose(file_descriptor);
+		close(file_descriptor);
 		return (1);
-
 	}
-	content = fputs(text_content, file_descriptor);
-	fclose(file_descriptor);
-	if (content != 0)
-		return (-1);
+	write(file_descriptor, text_content, i);
+	close(file_descriptor);
 	return (1);
 }
