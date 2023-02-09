@@ -23,7 +23,7 @@ int create_file(const char *filename, char *text_content)
 		close(file_descriptor);
 		return (1);
 	}
-	write(file_descriptor, text_content, i);
+	write(file_descriptor, text_content, i + 1);
 	close(file_descriptor);
 	return (1);
 }
