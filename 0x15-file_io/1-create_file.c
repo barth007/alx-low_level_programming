@@ -12,17 +12,17 @@ int create_file(const char *filename, char *text_content)
 	if (filename == NULL)
 		return (-1);
 
-	file_descriptor = open(filename, O_CREAT | O_TRUNC | O_WRONLY | O_RDONLY, 0600);
+	file_descriptor = open(filename, O_CREAT | O_TRUNC | O_WRONLY, 0600);
 	if (file_descriptor == -1)
 		return (-1);
 	i = 0;
-	while (text_content[i])
-		i++;
 	if (text_content == NULL)
 	{
 		close(file_descriptor);
 		return (1);
 	}
+	while (text_content[i])
+		i++;
 	file_write = write(file_descriptor, text_content, i);
 	close(file_descriptor);
 	if (file_write == -1)
