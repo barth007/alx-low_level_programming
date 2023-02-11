@@ -25,6 +25,20 @@ size_t cp_file(char *file_from, char *file_to)
 	}
 	while ((byte_read = read(fd_read, buffer, BUFSIZE)) > 0)
 	{
+		if (byte_read == (size_t)-1)
+		{
+			dprintf(STDERR_FILENO, "Error: can't read from %s\n", file_from);
+			if (close(fd_write) == -1)
+			{
+				dprintf(STDERR_FILENO, "Can't close fd %ld\n", write_byte);
+				exit(100);
+			}
+			if (close(fd_read) == -1)
+			{
+				dprintf(STDERR_FILENO, "Can't close fd %ld\n", byte_read);
+				exit(100);
+			}
+		}
 		write_byte = write(fd_write, buffer, byte_read);
 		if (write_byte == (size_t)-1)
 		{
