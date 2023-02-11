@@ -8,7 +8,7 @@
 size_t cp_file(char *file_from, char *file_to)
 {
 	int fd_read, fd_write;
-	void *buffer[BUFSIZE];
+	char *buffer[BUFSIZE];
 	size_t byte_read, write_byte;
 
 	fd_read = open(file_from, O_RDONLY);
@@ -17,7 +17,7 @@ size_t cp_file(char *file_from, char *file_to)
 		dprintf(STDERR_FILENO, "Error: Can't read to %s\n", file_from);
 		exit(98);
 	}
-	fd_write = open(file_to, O_CREAT | O_TRUNC | O_WRONLY | O_RDONLY, 0664);
+	fd_write = open(file_to, O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (fd_write == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
