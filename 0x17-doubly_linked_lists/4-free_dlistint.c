@@ -18,4 +18,5 @@ void free_dlistint(dlistint_t *head)
 			free(last_nodes);
 		}
 	}
+	exit(EXIT_FAILURE);
 }
