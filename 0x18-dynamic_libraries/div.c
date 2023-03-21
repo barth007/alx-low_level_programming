@@ -1,5 +1,5 @@
 #include "main.h"
-int divi(int a, int b)
+int div(int a, int b)
 {
 	int division;
 
