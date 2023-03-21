@@ -1,4 +1,5 @@
 #include "main.h"
-int _abs(int n)
+int _isalpha(int c)
 {
+	return(0);
 }
